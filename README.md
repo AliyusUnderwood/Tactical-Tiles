@@ -48,12 +48,15 @@ To run this application locally, follow these steps:
 
 ```
 # Clone the repository
+
 git clone https://github.com/AliyusUnderwood/Tactical-Tiles.git
 
 # Navigate to the project directory
+
 cd Tactical-Tiles
 
 # Install dependencies
+
 npm i
 cd client
 npm i
