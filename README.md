@@ -1,4 +1,4 @@
-<div align=center # **Tactical-Tiles**  ![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)> </div>
+# **Tactical-Tiles**  ![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
 
 
 
