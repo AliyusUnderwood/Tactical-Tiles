@@ -1,13 +1,19 @@
 /** @format */
 
-import ChessGame from './Components/ChessGame';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import LandingPage from './Components/Landing';
+import Login from './Components/Login';
+import Signup from './Components/Signup';
 
 function App() {
 	return (
-		<div className='flex flex-col items-center justify-center min-h-screen bg-gray-100 p-4'>
-			<h1 className='text-3xl font-bold mb-6'>Chess Game vs Computer</h1>
-			<ChessGame />
-		</div>
+		<Router>
+			<Routes>
+				<Route path='/' element={<LandingPage />} />
+				<Route path='/login' element={<Login />} />
+				<Route path='/signup' element={<Signup />} />
+			</Routes>
+		</Router>
 	);
 }
 

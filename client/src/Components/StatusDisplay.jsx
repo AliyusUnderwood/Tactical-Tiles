@@ -1,6 +1,7 @@
 /** @format */
 
 import { Difficulty } from '../utils/constants';
+import PropTypes from 'prop-types';
 
 function StatusDisplay({ status, difficulty }) {
 	return (
@@ -13,5 +14,10 @@ function StatusDisplay({ status, difficulty }) {
 		</>
 	);
 }
+
+StatusDisplay.propTypes = {
+	status: PropTypes.string.isRequired,
+	difficulty: PropTypes.number,
+};
 
 export default StatusDisplay;
