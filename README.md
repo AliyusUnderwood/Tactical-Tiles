@@ -1,7 +1,6 @@
-# Tactical-Tiles                                  ![DALL·E 2024-07-11 22 33 13 - A minimalist logo for a chess game webapp featuring a stylized king chess piece centered on a blank background  The chess piece should use various sha](https://github.com/user-attachments/assets/eb54c310-1306-473a-b6b6-834dadc552fe)
+# Tactical-Tiles  ![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg) 
 
 
-![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
 
 ## Overview
 
