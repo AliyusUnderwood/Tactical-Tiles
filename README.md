@@ -17,12 +17,23 @@ Welcome to the MERN Chess Application! This project showcases our collaborative 
 
 ### Technologies Used
 
-- **Front End**
+- **Front End:**
 - `React.js`
 
-- **Back End**
-- `Node.js`
-- 
+- **Back End:**
+- `Node.js` `Express.js`
+
+- **Database:**
+- `MongoDb` `Mongoose ODM`
+
+- **APIs:**
+- `GraphQL for quieries and mutations`
+
+- **Deployment:**
+- `Render`
+
+
+
 
 ## Table of Contents
 
