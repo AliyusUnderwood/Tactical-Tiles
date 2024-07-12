@@ -60,19 +60,42 @@ npm i
 cd ..
 ```
 **Set up environment variables:**
-Create a .env file in the root directory and add the necessary environment variables:
-
-
-
-
-
+- Create a `.env` file in the root directory and add the necessary environment variables:
+```
+MONGODB_URI=your_mongodb_uri
+JWT_SECRET=your_jwt_secret
+```
+**Start the development server:**
+```
+npm run dev
+```
 ## Usage
+After completing the installation steps, you can start using the application by visiting `http://localhost:3000` in your web browser.
 
 ## Contributing
 
+We welcome contributions to the MERN Chess Application! If you have any ideas, suggestions, or bug reports, please open an issue or submit a pull request. Follow these steps to contribute:
+
+- **Fork the repository.**
+- **Create a new branch:** `git checkout -b feature/your-feature-name`
+- **Commit your changes:** `git commit -m 'Add some feature'`
+- **Push to the branch:** `git push origin feature/your-feature-name`
+- **Open a pull request.**
+
 ## License
 
+This project is licensed under the MIT License.
+
 ## Questions and Contributors
+
+This project relies on the Node.js ecosystem, and we greatfully thank the developers of these libraries for their contributions to the open-source community! 
+
+To reach out to any of the trusty collaborators on this project:
+
+- Aliyus Underwood: [https://github.com/AliyusUnderwood](url)
+- Jake Pearson: [https://github.com/jakepears](url)
+- Joseph Collins:[https://github.com/collinsjosephj](url)
+- Efrain Ruiz: [https://github.com/](url)
 
 
 
