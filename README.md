@@ -11,7 +11,7 @@ Welcome to the MERN Chess Application! This project showcases our collaborative 
 - [Overview](#overview)
 - [Features](#features)
 - [Installation](#installation)
-- [Usage](#usage)=
+- [Usage](#usage)
 - [Contributing](#contributing)
 - [License](#license)
 - [Questions](#questions)
