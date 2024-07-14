@@ -1,6 +1,5 @@
-const { GraphQLError } = require('graphql');
 const { User, Game } = require('../models');
-const { signToken } = require('../utils/auth');
+const { signToken, AuthenticationError } = require('../utils/auth');
 const { Chess } = require('chess.js');
 const chessAi = require('../utils/chessAi');
 
@@ -64,42 +63,42 @@ const resolvers = {
       if (context.user) {
         const game = await Game.findById(gameId);
         if (!game) throw new Error('Game not found');
-
+    
         const chess = new Chess(game.currentBoard);
         const move = chess.move({ from, to, promotion: 'q' });
         if (move === null) throw new Error('Invalid move');
-
+    
         // Update game state with player's move
         game.currentBoard = chess.fen();
         game.moves.push({ from, to, piece: move.piece, timestamp: new Date().toISOString() });
-
+    
         // Check for game over after player's move
-        if (chess.game_over()) {
-          game.status = chess.in_checkmate() ? 'PLAYER_WON' : 'DRAW';
+        if (chess.isGameOver()) {  // Changed from chess.game_over()
+          game.status = chess.isCheckmate() ? 'PLAYER_WON' : 'DRAW';  // Changed from chess.in_checkmate()
         } else {
           // Make AI move
           try {
             const { fen: newFen, move: aiMove } = chessAi.makeMove(game.currentBoard, game.aiDifficulty);
             game.currentBoard = newFen;
             game.moves.push({ ...aiMove, timestamp: new Date().toISOString() });
-
+    
             // Check for game over after AI move
             const aiChess = new Chess(newFen);
-            if (aiChess.game_over()) {
-              game.status = aiChess.in_checkmate() ? 'AI_WON' : 'DRAW';
+            if (aiChess.isGameOver()) {  // Changed from aiChess.game_over()
+              game.status = aiChess.isCheckmate() ? 'AI_WON' : 'DRAW';  // Changed from aiChess.in_checkmate()
             }
           } catch (error) {
             console.error('AI move error:', error);
             throw new Error('Error during AI move');
           }
         }
-
+    
         await game.save();
         return game.populate('player');
       }
       throw new AuthenticationError('You need to be logged in!');
     },
-  },
+  }
 };
 
 module.exports = resolvers;

@@ -1,49 +1,53 @@
 const jwt = require('jsonwebtoken');
 const BlacklistedToken = require('../models/BlacklistedToken');
+const { GraphQLError } = require('graphql');
 
 const secret = 'mysecretsshhhhh';
 const expiration = '2h';
 
 module.exports = {
-  // Middleware to authenticate requests
-  authMiddleware: async function (req, res, next) {
-    // Extract token from query or headers
+  AuthenticationError: class AuthenticationError extends GraphQLError {
+    constructor(message) {
+      super(message, {
+        extensions: {
+          code: 'UNAUTHENTICATED',
+        },
+      });
+    }
+  },
+
+  // Middleware to authenticate requests and create context
+  authMiddleware: async function ({ req }) {
+
     let token = req.query.token || req.headers.authorization;
-
+  
     if (req.headers.authorization) {
-      // Check for incomplete "Bearer" token
-      if (req.headers.authorization.toLowerCase() === 'bearer') {
-        return res.status(401).json({ message: 'Token is missing' });
+      if (req.headers.authorization.toLowerCase().startsWith('bearer ')) {
+        token = req.headers.authorization.slice(7);
       }
-      
-      // Extract token from "Bearer <token>" format
-      token = req.headers.authorization.split(' ').pop().trim();
     }
-
-    // Ensure token exists
+  
     if (!token) {
-      return res.status(401).json({ message: 'You have no token!' });
+      return { user: null };
     }
-
+  
     try {
-      // Check if token is blacklisted (logged out)
       const blacklistedToken = await BlacklistedToken.findOne({ token });
       if (blacklistedToken) {
-        return res.status(401).json({ message: 'Token is no longer valid' });
+        return { user: null };
       }
-
-      // Verify and decode token
-      const { data } = jwt.verify(token, secret, { maxAge: expiration });
-      req.user = data;
-      next();
+  
+      const decoded = jwt.verify(token, secret, { maxAge: expiration });
+      return { user: decoded.data };
     } catch (err) {
-      return res.status(401).json({ message: 'Invalid token!' });
+      return { user: null };
     }
   },
 
   // Generate a new JWT for a user
   signToken: function ({ username, email, _id }) {
     const payload = { username, email, _id };
-    return jwt.sign({ data: payload }, secret, { expiresIn: expiration });
+    const token = jwt.sign({ data: payload }, secret, { expiresIn: expiration });
+    return token;
   },
 };
