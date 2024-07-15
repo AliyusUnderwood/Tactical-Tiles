@@ -12,9 +12,11 @@ const typeDefs = `
     currentBoard: String!
     status: GameStatus!
     moves: [Move]!
-    aiDifficulty: AIDifficulty!
+    aiDifficulty: Int!
     createdAt: String!
     updatedAt: String!
+    lastMove: Move
+    isPlayerTurn: Boolean!
   }
 
   type Move {
@@ -35,6 +37,7 @@ const typeDefs = `
     EASY
     MEDIUM
     HARD
+    EXPERT
   }
 
   type Auth {
@@ -53,6 +56,7 @@ const typeDefs = `
     login(email: String!, password: String!): Auth
     createGame(aiDifficulty: AIDifficulty!): Game
     makeMove(gameId: ID!, from: String!, to: String!): Game
+    deleteGame(_id: ID!): Game
   }
 `;
 
