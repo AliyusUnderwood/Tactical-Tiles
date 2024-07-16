@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
 
-mongoose.connect(process.env.MONGODB_URI || 'mongodb://127.0.0.1:27017/TacticalTilesDB', {
+// mongodb://127.0.0.1:27017/TacticalTilesDB
+mongoose.connect(process.env.MONGODB_URI || 'mongodb+srv://collinsjosephj:Subaru123!@tacticaltilesdb.r9pwhwe.mongodb.net/?retryWrites=true&w=majority&appName=TacticalTilesDB', {
     useNewUrlParser: true,
     useUnifiedTopology: true,
   })
