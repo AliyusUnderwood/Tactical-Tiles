@@ -10,10 +10,19 @@
     "build": "cd client && npm run build",
     "render-build": "npm install && npm run build"
   },
-  "keywords": ["chess", "ai", "mern", "graphql", "tactical tiles"],
+  "keywords": [
+    "chess",
+    "ai",
+    "mern",
+    "graphql",
+    "tactical tiles"
+  ],
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "concurrently": "^8.2.0"
+  },
+  "dependencies": {
+    "express-session": "^1.18.0"
   }
 }
