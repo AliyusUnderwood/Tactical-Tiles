@@ -10,21 +10,21 @@ import Dashboard from "./pages/Dashboard";
 import ChessGame from "./pages/ChessGame";
 
 function App() {
-  return (
-    <ApolloProvider client={client}>
-      <Router>
-        <div className="App">
-          <Routes>
-            <Route path="/" element={<Landing />} />
-            <Route path="/login" element={<Login />} />
-            <Route path="/signup" element={<Signup />} />
-            <Route path="/dashboard" element={<Dashboard />} />
-            <Route path="/game/:id" element={<ChessGame />} />
-          </Routes>
-        </div>
-      </Router>
-    </ApolloProvider>
-  );
+	return (
+		<ApolloProvider client={client}>
+			<Router>
+				<div className="App">
+					<Routes>
+						<Route path="/" element={<Landing />} />
+						<Route path="/login" element={<Login />} />
+						<Route path="/signup" element={<Signup />} />
+						<Route path="/dashboard" element={<Dashboard />} />
+						<Route path="/game/:id" element={<ChessGame />} />
+					</Routes>
+				</div>
+			</Router>
+		</ApolloProvider>
+	);
 }
 
 export default App;
