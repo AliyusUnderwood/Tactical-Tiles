@@ -7,7 +7,7 @@ services:
     buildCommand: 'npm install && npm run build'
     startCommand: 'npm start'
     repo: https://github.com/AliyusUnderwood/Tactical-Tiles
-    branch: main
+    branch: feature/JC-new-branch
     envVars:
       - key: MONGODB_URI
         value: 'mongodb+srv://collinsjosephj:Subaru123!@tacticaltilesdb.r9pwhwe.mongodb.net/?retryWrites=true&w=majority&appName=TacticalTilesDB'
