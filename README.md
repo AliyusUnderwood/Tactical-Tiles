@@ -95,10 +95,10 @@ This project relies on the Node.js ecosystem, and we greatfully thank the develo
 
 To reach out to any of the trusty collaborators on this project:
 
-- Aliyus Underwood: [GitHub](https://github.com/AliyusUnderwood)
-- Jake Pearson: [GitHub](https://github.com/jakepears)
-- Joseph Collins:[GitHub](https://github.com/collinsjosephj)
-- Efrain Ruiz: [GitHub](https://github.com/efrainrf)
+- [Aliyus Underwood on GitHub](https://github.com/AliyusUnderwood)
+- [Jake Pearson on GitHub](https://github.com/jakepears)
+- [Joseph Collins on GitHub](https://github.com/collinsjosephj)
+- [Efrain Ruiz on GitHub](https://github.com/efrainrf)
 
 
 
