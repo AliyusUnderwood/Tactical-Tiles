@@ -1,0 +1,18 @@
+services:
+  - type: web
+    name: Tactical-Tiles
+    env: node
+    plan: free
+    region: oregon
+    buildCommand: 'npm install && npm run build'
+    startCommand: 'npm start'
+    repo: https://github.com/AliyusUnderwood/Tactical-Tiles
+    branch: main
+    envVars:
+      - key: MONGODB_URI
+        value: 'mongodb://localhost:27017/TacticalTilesDB'
+      - key: SESSION_SECRET
+        value: 'your-session-secret'
+  - type: mongodb
+    name: TacticalTilesDB
+    plan: free
