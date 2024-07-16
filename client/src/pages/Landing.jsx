@@ -44,7 +44,7 @@ const LandingPage = () => {
 			ref={containerRef}
 			className='landing-page flex flex-col justify-center items-center h-screen w-screen bg-gray-800 text-white'>
 			<h1 ref={titleRef} className='text-4xl font-bold font-montserrat mb-8'>
-				Tiles
+			Tactical Tiles
 			</h1>
 			<div className='flex flex-col space-y-4'>
 				<Link
