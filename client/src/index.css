@@ -1,41 +1,31 @@
-body {
-	margin: 0;
-	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-	  'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-	  sans-serif;
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
-  }
-  
-  code {
-	font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-	  monospace;
-  }
-  
-  .App {
-	text-align: center;
-	padding: 20px;
-  }
-  
-  button {
-	margin: 10px;
-	padding: 10px 20px;
-	font-size: 16px;
-	cursor: pointer;
-  }
-  
-  form {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-  }
-  
-  input {
-	margin: 10px;
-	padding: 5px;
-	width: 200px;
-  }
-  
-  .error-text {
-	color: red;
-  }
+/** @format */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+	.betterShadow {
+		box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+			rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+	}
+
+	.hoverUnderline {
+		@apply relative;
+	}
+	.hoverUnderline::after {
+		@apply border-b-2 border-white;
+		content: '';
+		position: absolute;
+		bottom: -2px;
+		left: 0;
+		width: 100%;
+		transform: scaleX(0);
+		transform-origin: bottom right;
+		transition: transform 0.35s cubic-bezier(0.465, 0.183, 0.153, 0.946);
+	}
+	.hoverUnderline:hover::after {
+		transform: scaleX(1);
+		transform-origin: bottom left;
+	}
+}
