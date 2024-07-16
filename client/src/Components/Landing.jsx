@@ -1,10 +1,12 @@
 /** @format */
 
-import { useEffect, useRef } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import gsap from 'gsap';
+import ChessGame from './ChessGame';
 
 const LandingPage = () => {
+	const [gameStarted, setGameStarted] = useState(false);
 	const containerRef = useRef(null);
 	const titleRef = useRef(null);
 	const buttonsRef = useRef([]);
@@ -39,6 +41,19 @@ const LandingPage = () => {
 			);
 	}, []);
 
+	const startGame = () => {
+		gsap.to(containerRef.current, {
+			opacity: 0,
+			duration: 0.3,
+			ease: 'power4.in',
+			onComplete: () => setGameStarted(true),
+		});
+	};
+
+	if (gameStarted) {
+		return <ChessGame />;
+	}
+
 	return (
 		<div
 			ref={containerRef}
@@ -59,6 +74,12 @@ const LandingPage = () => {
 					className='button px-6 py-2 text-lg rounded transition duration-300 bg-green-500 hover:bg-green-600'>
 					Sign Up
 				</Link>
+				<button
+					ref={(el) => (buttonsRef.current[2] = el)}
+					className='button px-6 py-2 text-lg rounded transition duration-300 bg-red-500 hover:bg-red-600'
+					onClick={startGame}>
+					Play as Guest
+				</button>
 			</div>
 		</div>
 	);
