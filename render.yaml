@@ -12,7 +12,7 @@ services:
       - key: MONGODB_URI
         value: 'mongodb+srv://collinsjosephj:Subaru123!@tacticaltilesdb.r9pwhwe.mongodb.net/?retryWrites=true&w=majority&appName=TacticalTilesDB'
       - key: SESSION_SECRET
-        value: 'your-session-secret'
+        value: 'mySuperSecretSessionSecret'
   - type: mongodb
     name: TacticalTilesDB
     plan: free
