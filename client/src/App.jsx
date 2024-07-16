@@ -1,19 +1,27 @@
 /** @format */
 
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import LandingPage from './Components/Landing';
-import Login from './Components/Login';
-import Signup from './Components/Signup';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { ApolloProvider } from '@apollo/client';
+import client from './apolloClient';
+import Landing from './pages/Landing';
+import Login from './pages/Login';
+import Signup from './pages/Signup';
+import Dashboard from './pages/Dashboard';
+import ChessGame from './pages/ChessGame';
 
 function App() {
 	return (
-		<Router>
-			<Routes>
-				<Route path='/' element={<LandingPage />} />
-				<Route path='/login' element={<Login />} />
-				<Route path='/signup' element={<Signup />} />
-			</Routes>
-		</Router>
+		<ApolloProvider client={client}>
+			<Router>
+				<Routes>
+					<Route path='/' element={<Landing />} />
+					<Route path='/login' element={<Login />} />
+					<Route path='/signup' element={<Signup />} />
+					<Route path='/dashboard' element={<Dashboard />} />
+					<Route path='/game/:id' element={<ChessGame />} />
+				</Routes>
+			</Router>
+		</ApolloProvider>
 	);
 }
 

@@ -9,4 +9,23 @@
 		box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
 			rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
 	}
+
+	.hoverUnderline {
+		@apply relative;
+	}
+	.hoverUnderline::after {
+		@apply border-b-2 border-white;
+		content: '';
+		position: absolute;
+		bottom: -2px;
+		left: 0;
+		width: 100%;
+		transform: scaleX(0);
+		transform-origin: bottom right;
+		transition: transform 0.35s cubic-bezier(0.465, 0.183, 0.153, 0.946);
+	}
+	.hoverUnderline:hover::after {
+		transform: scaleX(1);
+		transform-origin: bottom left;
+	}
 }

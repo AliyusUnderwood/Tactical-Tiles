@@ -14,7 +14,7 @@ function ChessGame() {
 	useEffect(() => {
 		gsap.fromTo(
 			containerRef.current,
-			{ opacity: 0, y: 50 },
+			{ opacity: 1 },
 			{ opacity: 1, y: 0, duration: 0.6, ease: 'power4.out' }
 		);
 	}, []);
