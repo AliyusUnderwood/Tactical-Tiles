@@ -6,6 +6,10 @@
 
 Welcome to the MERN Chess Application! This project showcases our collaborative skills and coding abilities in building a scalable, user-focused single-page application using the MERN stack. This project is a fun way for us to express our love for coding and give back to the chess community and hobbyists alike. The application integrates real-world data and provides an engaging platform for chess enthusiasts to play and improve their skills.
 
+<img width="1914" alt="Screenshot 2024-07-17 at 04 12 31" src="https://github.com/user-attachments/assets/330ad879-c1ec-4764-b6d9-80f8f158767b">
+
+<img width="1918" alt="Screenshot 2024-07-17 at 04 12 17" src="https://github.com/user-attachments/assets/75a3dcb7-4c7b-4a44-8e8a-e7d35eb9d333">
+
 ## Table of Contents
 
 - [Overview](#overview)
@@ -40,7 +44,8 @@ Welcome to the MERN Chess Application! This project showcases our collaborative 
 - `GraphQL for quieries and mutations`
 
 - **Deployment:**
-- `Render`
+  
+ [`Render`](https://tactical-tiles.onrender.com/)
 
 ## Installation
 
