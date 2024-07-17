@@ -4,7 +4,7 @@ const path = require('path');
 const { ApolloServer } = require('@apollo/server');
 const { expressMiddleware } = require('@apollo/server/express4');
 const { authMiddleware } = require('./utils/auth');
-
+const cors = require('cors');
 // Import the two parts of a GraphQL schema
 const { typeDefs, resolvers } = require('./schemas');
 const db = require('./config/connection');
@@ -23,6 +23,7 @@ const startApolloServer = async () => {
   
   app.use(express.urlencoded({ extended: false }));
   app.use(express.json());
+  app.use(cors());
   
   app.use('/graphql', expressMiddleware(server, {
     context: authMiddleware
