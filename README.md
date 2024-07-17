@@ -43,42 +43,64 @@ Welcome to the MERN Chess Application! This project showcases our collaborative 
 - **APIs:**
 - `GraphQL for quieries and mutations`
 
-- **Deployment:**
+## **Deployment:**
   
- [`Render`](https://tactical-tiles.onrender.com/)
+- This application is deployed on [Render](https://tactical-tiles.onrender.com/)
 
 ## Installation
 
-To run this application locally, follow these steps:
+To install this application locally:
+
+1. Clone the repository
 
 ```
-# Clone the repository
-
 git clone https://github.com/AliyusUnderwood/Tactical-Tiles.git
-
-# Navigate to the project directory
-
-cd Tactical-Tiles
-
-# Install dependencies
-
-npm i
-cd client
-npm i
-cd ..
 ```
+
+2. Navigate into the project directory file
+   
+```
+cd Tactical-Tiles
+```
+
+3. Install dependencies, both in the server side and the client side of the application, and then navigate back to the root level for deployment.
+
+```
+npm install
+
+cd client
+
+npm install
+
+cd ...
+
+```
+
+4. You will need to create an .env file, at the root or server directory, and add your MONGODB_URI:
+
+```
+In the `.env` file: MONGODB_URI=your_mongodb_uri
+```
+
 **Set up environment variables:**
-- Create a `.env` file in the root directory and add the necessary environment variables:
+
+- Create a `.env` file in the root directory and add the necessary environment variables, and a `JWT_SECRET`, if applicable:
+
 ```
 MONGODB_URI=your_mongodb_uri
 JWT_SECRET=your_jwt_secret
 ```
+
 **Start the development server:**
 ```
 npm run dev
 ```
+
 ## Usage
-After completing the installation steps, you can start using the application by visiting `http://localhost:3000` in your web browser.
+
+- After completing the installation steps, you can start using the application by visiting `http://localhost:3000` in your web browser.
+- You will need to sign in with an email, password, and pick a username that you like! This will enable you to come back to a game that you havent finished. 
+- From there, you are free to enjoy playing chess! 
 
 ## Contributing
 
@@ -90,9 +112,12 @@ We welcome contributions to the MERN Chess Application! If you have any ideas, s
 - **Push to the branch:** `git push origin feature/your-feature-name`
 - **Open a pull request.**
 
+We would love to introduce the ability to play peer-to-peer, and make it even more personable with a video-relay service, that way you can talk that talk, as you walk your walk. 
+
 ## License
 
-This project is licensed under the MIT License.
+This project is licensed under the MIT License. See the [LICENSE](https://github.com/AliyusUnderwood/Tactical-Tiles/blob/main/LICENSE) file for details. 
+
 
 ## Questions and Contributors
 
