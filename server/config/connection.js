@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
 
-mongoose.connect(process.env.MONGODB_URI || 'mongodb://127.0.0.1:27017/TacticalTilesDB');
+mongoose.connect(process.env.MONGODB_URI || 'mongodb+srv://collinsjosephj:atlas123@tacticaltilesdb.r9pwhwe.mongodb.net/TacticalTilesDB?retryWrites=true&w=majority&appName=TacticalTilesDB');
 
 module.exports = mongoose.connection;
