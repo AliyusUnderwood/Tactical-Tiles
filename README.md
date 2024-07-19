@@ -18,6 +18,7 @@ Welcome to the MERN Chess Application! This project showcases our collaborative 
 - [Usage](#usage)
 - [Contributing](#contributing)
 - [License](#license)
+- [App](#app)
 - [Questions](#questions)
 
 ## Features
@@ -118,6 +119,8 @@ We would love to introduce the ability to play peer-to-peer, and make it even mo
 
 This project is licensed under the MIT License. See the [LICENSE](https://github.com/AliyusUnderwood/Tactical-Tiles/blob/main/LICENSE) file for details. 
 
+## App
+[<h1>📓<h1>](https://tactical-tiles-19d538a6e28a.herokuapp.com/)
 
 ## Questions and Contributors
 
